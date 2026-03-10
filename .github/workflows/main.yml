@@ -40,7 +40,8 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
           flavor: |
             latest=auto
-
+      - name: Set up Docker Buildx  # ← AÑADE ESTO
+        uses: docker/setup-buildx-action@v3
       - name: Construir i publicar imatge Docker
         uses: docker/build-push-action@v5
         with:
